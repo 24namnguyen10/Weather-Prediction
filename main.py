@@ -26,7 +26,7 @@ def main():
     # Prediction
     if st.button("Predict"):
         try:
-            prediction = model.predict([features])
+            prediction = model.predict([features]).round()
             st.success(f"Predicted Output: {prediction[0]}")
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
